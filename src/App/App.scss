@@ -1,0 +1,18 @@
+h1 {
+  &.hey {
+    color: #4d908e;
+  }
+  &.ho {
+    color: #43aa8b;
+  }
+  &.letsgo {
+    color: #90be6d;
+  }
+}
+
+button {
+  &:hover {
+  }
+  &:active {
+  }
+}

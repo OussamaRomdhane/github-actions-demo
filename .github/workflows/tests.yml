@@ -1,0 +1,37 @@
+name: CI
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Unit tests
+        uses: actions/setup-node@v2
+        with:
+          node-version: "12"
+      - run: yarn install
+      - run: yarn test:ci
+      - name: Tests ✅
+        if: ${{ success() }}
+        run: |
+          curl --request POST --url https://webhook.site/01c4cfe2-423c-4344-8e20-ee88a4b556b2 --data '{
+            "context": "tests",
+            "state": "success",
+            "description": "Tests passed",
+            "target_url": "https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          }'
+      - name: Tests 🚨
+        if: ${{ failure() }}
+        run: |
+          curl --request POST --url https://webhook.site/01c4cfe2-423c-4344-8e20-ee88a4b556b2 --data '{
+            "context": "tests",
+            "state": "failure",
+            "description": "Tests failed",
+            "target_url": "https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          }'

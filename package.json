@@ -1,0 +1,40 @@
+{
+  "name": "github-actions-demo",
+  "version": "0.0.1",
+  "description": "A Github actions demo repo",
+  "main": "src/index.jsx",
+  "scripts": {
+    "build": "parcel build ./src/index.html --public-url .",
+    "build:ci": "parcel build ./src/index.html --public-url .",
+    "dev": "parcel ./src/index.html",
+    "test": "jest",
+    "test:ci": "jest --ci",
+    "lint:ci": "eslint . --ext .js,.jsx"
+  },
+  "keywords": [],
+  "author": "Oussama Romdhane<oussama.igasho@gmail.com>(https://oussama.dev)",
+  "license": "MIT",
+  "dependencies": {
+    "prop-types": "^15.7.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.14.4",
+    "@babel/preset-react": "^7.13.13",
+    "@testing-library/react": "^11.2.7",
+    "babel-jest": "^27.0.2",
+    "eslint": "^7.28.0",
+    "eslint-plugin-jest": "^24.3.6",
+    "eslint-plugin-react": "^7.24.0",
+    "jest": "^27.0.4",
+    "parcel": "^2.0.0-beta.2",
+    "parcel-bundler": "^1.12.5",
+    "sass": "^1.34.1"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "^.+\\.(css|less|scss)$": "babel-jest"
+    }
+  }
+}
