@@ -1,0 +1,1 @@
+{"version":3,"sources":["App/App.scss"],"names":[],"mappings":"AACE,OACE,cAEF,MACE,cAEF,UACE","file":"src.fa2cb96f.css","sourceRoot":"../src","sourcesContent":["h1 {\n  &.hey {\n    color: #4d908e;\n  }\n  &.ho {\n    color: #43aa8b;\n  }\n  &.letsgo {\n    color: #90be6d;\n  }\n}\n\nbutton {\n  &:hover {\n  }\n  &:active {\n  }\n}\n"]}
