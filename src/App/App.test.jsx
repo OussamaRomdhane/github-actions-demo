@@ -33,7 +33,7 @@ describe("<App />", () => {
 
     fireEvent.click(getByRole("button"));
 
-    expect(getByRole("banner").textContent).toBe(DEFAULT_MARQUEE[2]);
+    expect(getByRole("banner").textContent).toBe(DEFAULT_MARQUEE[1]);
 
     fireEvent.click(getByRole("button"));
 
